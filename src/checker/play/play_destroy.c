@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   play_rrb.c                                         :+:      :+:    :+:   */
+/*   play_destroy.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 09:22:13 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/21 01:57:32 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/21 00:33:16 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/21 01:47:52 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	play_rrb(t_play *self)
+void	play_destroy(t_play **aself)
 {
-	stack_reverse_rotate(self->stack_b);
+	if (aself && *aself)
+	{
+		stack_destroy(&(*aself)->stack_a);
+		stack_destroy(&(*aself)->stack_b);
+		ft_memdel((void **)aself);
+	}
 }

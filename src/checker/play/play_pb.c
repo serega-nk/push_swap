@@ -6,13 +6,13 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 09:22:13 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/20 14:06:32 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/21 01:57:09 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	play_pb(t_app *self)
+void	play_pb(t_play *self)
 {
 	stack_push(self->stack_a, self->stack_b);
 }

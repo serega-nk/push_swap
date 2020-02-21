@@ -6,13 +6,13 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 09:22:13 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/20 13:53:18 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/21 01:57:37 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	play_sb(t_app *self)
+void	play_sb(t_play *self)
 {
 	stack_swap(self->stack_b);
 }

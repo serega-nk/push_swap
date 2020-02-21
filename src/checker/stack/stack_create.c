@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 04:04:56 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/20 07:46:47 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/21 04:35:15 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 t_stack		*stack_create(void)
 {
-	return ((t_stack *)ft_xmemalloc(sizeof(t_stack)));
+	t_stack		*self;
+
+	self = (t_stack *)ft_xmemalloc(sizeof(t_stack));
+	return (self);
 }

@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/02 03:51:16 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/20 07:48:24 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/21 04:35:51 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,15 +19,25 @@ OBJ_DIR		= ./obj
 HEADERS		= checker.h
 SOURCES		= \
 	$(addprefix checker/, \
+		$(addprefix play/, \
+			play_create.c \
+			play_destroy.c \
+			play_execute.c \
+			play_pa.c \
+			play_pb.c \
+			play_ra.c \
+			play_rb.c \
+			play_rr.c \
+			play_rra.c \
+			play_rrb.c \
+			play_rrr.c \
+			play_sa.c \
+			play_sb.c \
+			play_ss.c \
+		) \
 		$(addprefix stack/, \
-			stack_append.c \
-			stack_count.c \
 			stack_create.c \
 			stack_destroy.c \
-			stack_is_empty.c \
-			stack_is_ordered.c \
-			stack_pop.c \
-			stack_push.c \
 		) \
 		main.c \
 	) \

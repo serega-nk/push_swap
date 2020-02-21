@@ -6,13 +6,13 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 09:22:13 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/20 13:44:03 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/21 01:57:26 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	play_rb(t_app *self)
+void	play_rb(t_play *self)
 {
 	stack_rotate(self->stack_b);
 }

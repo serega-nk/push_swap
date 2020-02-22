@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   play_rb.c                                          :+:      :+:    :+:   */
+/*   app_init.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 06:35:45 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/22 06:35:51 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/21 22:59:49 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/22 03:24:31 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	play_rb(t_app *self)
+void	app_init(t_app *self)
 {
-	stack_rotate(self->stack_b);
+	self->stack_a = stack_create();
+	self->stack_b = stack_create();
 }

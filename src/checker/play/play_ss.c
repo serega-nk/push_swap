@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 09:22:13 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/21 01:57:39 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/22 06:36:53 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/22 06:36:54 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	play_ss(t_play *self)
+void	play_ss(t_app *self)
 {
 	stack_swap(self->stack_a);
 	stack_swap(self->stack_b);

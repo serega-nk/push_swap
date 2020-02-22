@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/21 04:48:23 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/21 04:52:43 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/21 23:00:51 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/22 06:30:54 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	app_free(t_app *self)
 {
-	
+	stack_destroy(&self->stack_b);
+	stack_destroy(&self->stack_a);
 }

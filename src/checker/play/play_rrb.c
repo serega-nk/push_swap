@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 09:22:13 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/21 01:57:32 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/22 06:36:12 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/22 06:36:13 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	play_rrb(t_play *self)
+void	play_rrb(t_app *self)
 {
 	stack_reverse_rotate(self->stack_b);
 }

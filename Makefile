@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/02 03:51:16 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/21 04:35:51 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/22 06:18:59 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,28 +19,44 @@ OBJ_DIR		= ./obj
 HEADERS		= checker.h
 SOURCES		= \
 	$(addprefix checker/, \
-		$(addprefix play/, \
-			play_create.c \
-			play_destroy.c \
-			play_execute.c \
-			play_pa.c \
-			play_pb.c \
-			play_ra.c \
-			play_rb.c \
-			play_rr.c \
-			play_rra.c \
-			play_rrb.c \
-			play_rrr.c \
-			play_sa.c \
-			play_sb.c \
-			play_ss.c \
+		$(addprefix app/, \
+			app_free.c \
+			app_init.c \
+			app_load.c \
+			app_play.c \
 		) \
 		$(addprefix stack/, \
+			stack_append.c \
 			stack_create.c \
 			stack_destroy.c \
 		) \
 		main.c \
 	) \
+
+# SOURCES		= \
+# 	$(addprefix checker/, \
+# 		$(addprefix play/, \
+# 			play_create.c \
+# 			play_destroy.c \
+# 			play_execute.c \
+# 			play_pa.c \
+# 			play_pb.c \
+# 			play_ra.c \
+# 			play_rb.c \
+# 			play_rr.c \
+# 			play_rra.c \
+# 			play_rrb.c \
+# 			play_rrr.c \
+# 			play_sa.c \
+# 			play_sb.c \
+# 			play_ss.c \
+# 		) \
+# 		$(addprefix stack/, \
+# 			stack_create.c \
+# 			stack_destroy.c \
+# 		) \
+# 		main.c \
+# 	) \
 
 LIBFT_DIR	= ./libft
 LIBFT		= $(LIBFT_DIR)/libft.a

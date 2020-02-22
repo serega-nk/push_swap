@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/18 22:50:18 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/21 06:38:38 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/21 21:39:36 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/22 06:27:41 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,55 +14,25 @@
 
 int		main(int argc, char *argv[])
 {
-	t_app	*app;
+	t_app	app;
 
+	ft_on_xexit(&app_free, &app);
 	if (argc > 1)
 	{
-		app = app_create();
-		app_run(app, argc, argv);
-		
-
-
-		if (play_load(play, argc, argv) == 0)
+		app_init(&app);
+		if (app_load(&app, argv + 1, argc - 1))
+		{
+			if (app_play(&app))
+				ft_putendl("OK");
+			else
+				ft_putendl("KO");
+			ft_xexit(EXIT_SUCCESS);
+		}
+		else
 		{
 			ft_putendl_fd("Error", 2);
-			play_destroy(&play);
-			return (EXIT_FAILURE);
+			ft_xexit(EXIT_FAILURE);
 		}
-		if (play(play))
-			ft_putendl("OK");
-		else
-			ft_putendl("KO");
-		play_destroy(&play);
-		// if (app_load(&app, argc, argv) == 0)
-
-		// {
-		// 	ft_putendl_fd("Error", 2);
-		// 	app_free(&app);
-		// 	return (EXIT_FAILURE);
-		// }
-		// if (app_play(&app))
-		// 	ft_putendl("OK");
-		// else
-		// 	ft_putendl("KO");
-		// app_free(&app);
-		ft_on_xexit(&app_free, &app);
-		app_load(&app, argc, argv);
-		app_play(&app);
-		ft_xexit(EXIT_SUCCESS);
-		// if (app_load(&app, argc, argv))
-		// {
-		// 	if (app_play(&app))
-		// 		ft_putendl("OK");
-		// 	else
-		// 		ft_putendl("KO");
-		// 	ft_xexit(EXIT_SUCCESS);
-		// }
-		// else
-		// {
-		// 	ft_putendl_fd("Error", 2);
-		// 	ft_xexit(EXIT_FAILURE);
-		// }
 	}
 	return (EXIT_SUCCESS);
 }

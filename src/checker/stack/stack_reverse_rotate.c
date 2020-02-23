@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 01:17:36 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 01:27:14 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/23 04:23:18 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	stack_reverse_rotate(t_stack *self)
 {
-	if (self)
-		return ;
+	if (self->root)
+		self->root = self->root->prev;
 }

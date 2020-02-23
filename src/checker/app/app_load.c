@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/21 22:07:49 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/22 08:24:06 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/23 03:22:52 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	parse_number(const char *str, int *avalue)
 	return (0);
 }
 
-int			app_load(t_app *self, char *arr[], int count)
+void		app_load(t_app *self, char *arr[], int count)
 {
 	int		index;
 	int		value;
@@ -49,10 +49,9 @@ int			app_load(t_app *self, char *arr[], int count)
 	while (index < count)
 	{
 		if (!parse_number(arr[index], &value))
-			return (0);
+			app_exit(APP_EXIT_ERROR);
 		if (!stack_append(self->stack_a, value))
-			return (0);
+			app_exit(APP_EXIT_ERROR);
 		index++;
 	}
-	return (1);
 }

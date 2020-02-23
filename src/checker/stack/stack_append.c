@@ -6,14 +6,15 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 03:38:48 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/22 06:31:55 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/23 03:30:17 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	stack_append(t_stack *self, int value)
+int		stack_append(t_stack *self, int value)
 {
 	if (self && value)
-		return ;
+		return (1);
+	return (0);
 }

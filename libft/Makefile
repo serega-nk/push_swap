@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/04 01:21:24 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/19 13:21:48 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/23 01:14:28 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -138,6 +138,9 @@ SOURCES		= \
 			ft_pf_print_string.c \
 			ft_pf_print_unsigned.c \
 		) \
+	) \
+	$(addprefix get_next_line/, \
+		get_next_line.c \
 	) \
 	$(addprefix ft_xexit/, \
 		ft_on_xexit.c \

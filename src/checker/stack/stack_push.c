@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   stack_push.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 21:23:29 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 01:57:08 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/23 01:20:34 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/23 01:22:24 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "checker.h"
 
-void	ft_memdel(void **ap)
+void	stack_push(t_stack *self, t_stack *dest)
 {
-	if (ap && *ap)
-	{
-		free(*ap);
-		*ap = NULL;
-	}
+	if (self && dest)
+		return ;
 }

@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   gnl_close.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 21:23:29 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 01:57:08 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/22 22:08:23 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/23 01:04:35 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "gnl_private.h"
 
-void	ft_memdel(void **ap)
+static void		del(char *str, size_t len)
 {
-	if (ap && *ap)
+	len = 0;
+	ft_strdel(&str);
+}
+
+int				gnl_close(int fd)
+{
+	t_gnl	*gnl;
+	
+	if ((gnl = gnl_state(fd)))
 	{
-		free(*ap);
-		*ap = NULL;
+		ft_strdel(&gnl->save);
+		ft_lstdel(&gnl->more, &del);
+		gnl->eof = 0;
 	}
+	return (close(fd));
 }

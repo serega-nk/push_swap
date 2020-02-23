@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   app_exit.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 21:23:29 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 01:57:08 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/23 01:28:03 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/23 03:31:05 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "checker.h"
 
-void	ft_memdel(void **ap)
+void	app_exit(t_exit exit)
 {
-	if (ap && *ap)
+	if (exit == APP_EXIT_ERROR)
 	{
-		free(*ap);
-		*ap = NULL;
+		ft_putendl_fd("Error", 2);
+		ft_xexit(EXIT_FAILURE);
+	}
+	else if (exit == APP_EXIT_OK)
+	{
+		ft_putendl("OK");
+		ft_xexit(EXIT_SUCCESS);
+	}
+	else if (exit == APP_EXIT_KO)
+	{
+		ft_putendl("KO");
+		ft_xexit(EXIT_SUCCESS);
 	}
 }

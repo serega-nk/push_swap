@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   stack_rotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 21:23:29 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 01:57:08 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/23 01:17:25 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/23 01:22:36 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "checker.h"
 
-void	ft_memdel(void **ap)
+void	stack_rotate(t_stack *self)
 {
-	if (ap && *ap)
-	{
-		free(*ap);
-		*ap = NULL;
-	}
+	if (self)
+		return ;
 }

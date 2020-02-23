@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   gnl.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 21:23:29 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 01:57:08 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/22 22:02:05 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/22 22:11:44 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GNL_H
+# define GNL_H
 
-void	ft_memdel(void **ap)
-{
-	if (ap && *ap)
-	{
-		free(*ap);
-		*ap = NULL;
-	}
-}
+int		gnl_readline(int fd, char **aline);
+int		gnl_close(int fd);
+
+#endif

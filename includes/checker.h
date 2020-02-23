@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 04:07:56 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/22 08:37:43 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/23 03:25:53 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include "libft.h"
+# include "get_next_line.h"
 # include "ft_xexit.h"
 
 typedef struct	s_item
@@ -34,6 +35,17 @@ typedef struct	s_stack
 t_stack			*stack_create(void);
 void			stack_destroy(t_stack **aself);
 int				stack_append(t_stack *self, int value);
+void			stack_push(t_stack *self, t_stack *dest);
+void			stack_reverse_rotate(t_stack *self);
+void			stack_rotate(t_stack *self);
+void			stack_swap(t_stack *self);
+
+typedef enum	e_exit
+{
+	APP_EXIT_OK,
+	APP_EXIT_KO,
+	APP_EXIT_ERROR
+}				t_exit;
 
 typedef struct	s_app
 {
@@ -42,9 +54,10 @@ typedef struct	s_app
 }				t_app;
 
 void			app_init(t_app *self);
-int				app_load(t_app *self, char *arr[], int count);
-int				app_play(t_app *self);
+void			app_load(t_app *self, char *arr[], int count);
+void			app_play(t_app *self);
 void			app_free(t_app *self);
+void			app_exit(t_exit exit);
 
 void			play_sa(t_app *self);
 void			play_sb(t_app *self);

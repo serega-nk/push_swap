@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 12:14:16 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 12:57:08 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/23 21:04:35 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_item	*stack_pop(t_stack *self)
 	{
 		if (item == item->next)
 		{
-			self->root = NULL;	
+			self->root = NULL;
 		}
 		else
 		{

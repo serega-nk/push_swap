@@ -6,13 +6,13 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 11:32:45 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 11:34:09 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/23 21:05:05 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int	    stack_unique(t_stack *self, int value)
+int		stack_unique(t_stack *self, int value)
 {
 	t_item	*walk;
 

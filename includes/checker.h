@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 04:07:56 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 13:46:29 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/23 22:41:23 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "libft.h"
 # include "get_next_line.h"
 # include "ft_xexit.h"
+# include "ft_printf.h"
 
 typedef struct	s_item
 {
@@ -41,7 +42,7 @@ void			stack_push(t_stack *self, t_item *item);
 void			stack_swap(t_stack *self);
 void			stack_rotate(t_stack *self);
 void			stack_reverse_rotate(t_stack *self);
-int	    		stack_unique(t_stack *self, int value);
+int				stack_unique(t_stack *self, int value);
 int				stack_empty(t_stack *self);
 int				stack_ordered(t_stack *self);
 

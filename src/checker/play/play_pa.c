@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 06:34:25 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/22 06:34:35 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/23 11:38:50 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	play_pa(t_app *self)
 {
-	stack_push(self->stack_b, self->stack_a);
+	stack_push(self->stack_a, stack_pop(self->stack_b));
 }

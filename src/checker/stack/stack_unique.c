@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   play_pb.c                                          :+:      :+:    :+:   */
+/*   stack_unique.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 06:35:36 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 11:39:00 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/23 11:32:45 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/23 11:34:09 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	play_pb(t_app *self)
+int	    stack_unique(t_stack *self, int value)
 {
-	stack_push(self->stack_b, stack_pop(self->stack_a));
+	t_item	*walk;
+
+	walk = self->root;
+	while (walk)
+	{
+		if (walk->value == value)
+			return (0);
+		walk = walk->next;
+		if (walk == self->root)
+			break ;
+	}
+	return (1);
 }

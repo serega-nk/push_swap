@@ -1,18 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   play_pb.c                                          :+:      :+:    :+:   */
+/*   stack_pop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 06:35:36 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 11:39:00 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/23 12:14:16 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/23 12:57:08 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	play_pb(t_app *self)
+t_item	*stack_pop(t_stack *self)
 {
-	stack_push(self->stack_b, stack_pop(self->stack_a));
+	t_item	*item;
+
+	if ((item = self->root))
+	{
+		if (item == item->next)
+		{
+			self->root = NULL;	
+		}
+		else
+		{
+			self->root = item->next;
+			item->next->prev = item->prev;
+			item->prev->next = item->next;
+		}
+		item->prev = NULL;
+		item->next = NULL;
+	}
+	return (item);
 }

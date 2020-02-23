@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 04:07:56 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 04:16:02 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/23 12:49:49 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,16 @@ typedef struct	s_stack
 
 t_stack			*stack_create(void);
 void			stack_destroy(t_stack **aself);
-int				stack_append(t_stack *self, int value);
-int				stack_empty(t_stack *self);
-int				stack_ordered(t_stack *self);
+void			stack_append(t_stack *self, int value);
+t_item			*stack_item(int value);
+t_item			*stack_pop(t_stack *self);
+void			stack_push(t_stack *self, t_item *item);
 void			stack_swap(t_stack *self);
-void			stack_push(t_stack *self, t_stack *dest);
 void			stack_rotate(t_stack *self);
 void			stack_reverse_rotate(t_stack *self);
+int	    		stack_unique(t_stack *self, int value);
+int				stack_empty(t_stack *self);
+int				stack_ordered(t_stack *self);
 
 typedef struct	s_app
 {

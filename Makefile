@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/02 03:51:16 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/23 13:23:20 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/23 13:46:57 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,9 +41,11 @@ SOURCES		= \
 		) \
 		$(addprefix stack/, \
 			stack_append.c \
+			stack_clean.c \
 			stack_create.c \
 			stack_destroy.c \
 			stack_empty.c \
+			stack_item_destroy.c \
 			stack_item.c \
 			stack_ordered.c \
 			stack_pop.c \

@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_destroy.c                                    :+:      :+:    :+:   */
+/*   stack_item_destroy.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 01:57:16 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 13:37:36 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/23 13:44:45 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/23 13:46:03 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	stack_destroy(t_stack **aself)
+void	stack_item_destroy(t_item **aself)
 {
-	if (aself && *aself)
-	{
-		stack_clean(*aself);
-		ft_memdel((void **)aself);
-	}
+	ft_memdel((void **)aself);
 }

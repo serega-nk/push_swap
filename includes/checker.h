@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 04:07:56 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 12:49:49 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/23 13:46:29 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ typedef struct	s_stack
 
 t_stack			*stack_create(void);
 void			stack_destroy(t_stack **aself);
+void			stack_clean(t_stack *self);
 void			stack_append(t_stack *self, int value);
 t_item			*stack_item(int value);
+void			stack_item_destroy(t_item **aself);
 t_item			*stack_pop(t_stack *self);
 void			stack_push(t_stack *self, t_item *item);
 void			stack_swap(t_stack *self);

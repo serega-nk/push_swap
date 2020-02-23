@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/02 03:51:16 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/23 13:46:57 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/23 14:08:24 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -97,7 +97,6 @@ norm:
 	@norminette $(INCS) $(SRCS)
 
 test: $(NAME)
-	#cat 1.txt | ./checker 3 2 1 0
-	./checker 3 2 one 0
+	echo -e "sa\npb\nrrr" | ./checker 0 9 1 8 2 7 3 6 4 5
 
 .PHONY: all clean fclean re norm $(LIBFT)

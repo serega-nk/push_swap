@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/02 03:51:16 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/23 04:16:31 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/23 13:23:20 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,11 +44,14 @@ SOURCES		= \
 			stack_create.c \
 			stack_destroy.c \
 			stack_empty.c \
+			stack_item.c \
 			stack_ordered.c \
+			stack_pop.c \
 			stack_push.c \
 			stack_reverse_rotate.c \
 			stack_rotate.c \
 			stack_swap.c \
+			stack_unique.c \
 		) \
 		main.c \
 	) \
@@ -59,6 +62,7 @@ LIBFT		= $(LIBFT_DIR)/libft.a
 CC			= gcc
 WFLAGS		= -Wall -Wextra -Werror
 IFLAGS		= -I$(INC_DIR)/ -I$(LIBFT_DIR)/includes/
+LFLAGS		= -L$(LIBFT_DIR)/ -lft
 
 INCS		= $(addprefix $(INC_DIR)/, $(HEADERS))
 SRCS		= $(addprefix $(SRC_DIR)/, $(SOURCES))
@@ -67,7 +71,7 @@ OBJS		= $(addprefix $(OBJ_DIR)/, $(SOURCES:.c=.o))
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
-	$(CC) $(WFLAGS) $(IFLAGS) $^ -o $@
+	$(CC) $(WFLAGS) $(IFLAGS) $(OBJS) $(LFLAGS) -o $@
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INCS) Makefile
 	@mkdir -p ${@D}

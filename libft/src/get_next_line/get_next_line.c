@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bconchit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 21:46:24 by bconchit          #+#    #+#             */
-/*   Updated: 2019/09/23 00:48:31 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/23 13:07:05 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static t_list	*gnl_strsplit(char const *str, char sep)
 	alst = &begin;
 	while ((ptr = ft_strchr(str, sep)) || 1)
 	{
-		*alst = ft_lstnew(str, (ptr ? (ptr - str) : ft_strlen(str)) + 1);
+		*alst = ft_lstnew(str, (ptr ? (size_t)(ptr - str) : ft_strlen(str)) + 1);
 		if (!(*alst) || !(*alst)->content || !(*alst)->content_size)
 		{
 			alst = &begin;

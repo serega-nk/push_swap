@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/21 22:07:49 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 13:03:30 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/23 13:24:59 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,7 @@ void		app_load(t_app *self, char *arr[], int count)
 			app_error();
 		if (!stack_unique(self->stack_a, value))
 			app_error();
-		if (!stack_append(self->stack_a, value))
-			app_error();
+		stack_append(self->stack_a, value);
 		index++;
 	}
 }

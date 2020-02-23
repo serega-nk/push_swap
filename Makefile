@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/02 03:51:16 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/23 03:30:53 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/23 04:16:31 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ HEADERS		= checker.h
 SOURCES		= \
 	$(addprefix checker/, \
 		$(addprefix app/, \
-			app_exit.c \
+			app_error.c \
 			app_free.c \
 			app_init.c \
 			app_load.c \
@@ -43,6 +43,8 @@ SOURCES		= \
 			stack_append.c \
 			stack_create.c \
 			stack_destroy.c \
+			stack_empty.c \
+			stack_ordered.c \
 			stack_push.c \
 			stack_reverse_rotate.c \
 			stack_rotate.c \

@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_pop.c                                        :+:      :+:    :+:   */
+/*   gnl_state.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 04:21:05 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/20 07:47:18 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/24 00:34:47 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/24 01:01:51 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "gnl_private.h"
 
-t_item		*stack_pop(t_stack *self)
+t_gnl	*gnl_state(int fd)
 {
-	t_item	*item;
+	static t_gnl	save[GNL_FDS];
+	static int		zero = 0;
 
-	if (self && self->head)
+	if (fd >= 0 && fd < GNL_FDS)
 	{
-		item = self->head;
-		if ((self->head = self->head->next))
-			self->head->prev = NULL;
-		item->prev = NULL;
-		item->next = NULL;
-		if (self->tail == item)
-			self->tail = NULL;
-		self->count--;
-		return (item);
+		if (zero == 0)
+		{
+			ft_bzero(save, sizeof(t_gnl) * GNL_FDS);
+			zero = 1;
+		}
+		return (&save[fd]);
 	}
 	return (NULL);
 }

@@ -6,18 +6,19 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/02 03:51:16 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/23 23:02:57 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/24 01:32:35 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= checker
+NAME_1		= checker
+NAME		= test
 
 INC_DIR		= ./includes
 SRC_DIR		= ./src
 OBJ_DIR		= ./obj
 
-HEADERS		= checker.h
-SOURCES		= \
+HEADERS_1	= checker.h
+SOURCES_1	= \
 	$(addprefix checker/, \
 		$(addprefix app/, \
 			app_error.c \
@@ -58,6 +59,9 @@ SOURCES		= \
 		main.c \
 	) \
 
+HEADERS		= gnl.h
+SOURCES		= main.c gnl/gnl_clean.c gnl/gnl_state.c gnl/gnl_readline.c
+
 LIBFT_DIR	= ./libft
 LIBFT		= $(LIBFT_DIR)/libft.a
 
@@ -96,7 +100,7 @@ re: fclean all
 norm:
 	@norminette $(INCS) $(SRCS)
 
-test: $(NAME)
+test2: $(NAME)
 	echo "rra\npb\nsa\nrra\npa" | ./checker 3 2 1 0
 
 .PHONY: all clean fclean re norm $(LIBFT)

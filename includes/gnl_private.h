@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_append.c                                     :+:      :+:    :+:   */
+/*   gnl_private.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 04:04:36 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/20 07:46:40 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/24 00:28:06 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/24 04:00:18 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#ifndef GNL_PRIVATE_H
+# define GNL_PRIVATE_H
 
-void		stack_append(t_stack *self, int value)
+# include <unistd.h>
+# include "libft.h"
+# include "ft_xexit.h"
+
+# define GNL_FDS 1000
+# define GNL_BUF 100
+
+typedef struct	s_gnl
 {
-	t_item	*item;
+	t_list		*save;
+	int 		eof;
+}				t_gnl;
 
-	item = (t_item *)ft_xmemalloc(sizeof(t_item));
-	item->value = value;
-	if (self->head == NULL)
-	{
-		self->head = item;
-		self->tail = item;
-	}
-	else
-	{
-		item->prev = self->tail;
-		self->tail->next = item;
-		self->tail = item;
-	}
-	self->count++;
-}
+t_gnl			*gnl_state(int fd);
+
+#endif

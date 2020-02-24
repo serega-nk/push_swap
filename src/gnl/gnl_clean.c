@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_destroy.c                                 :+:      :+:    :+:   */
+/*   gnl_clean.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 12:26:32 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/20 03:53:19 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/24 00:33:38 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/24 01:21:17 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_stack.h"
+#include "gnl_private.h"
 
-void	ft_stack_destroy(t_stack **aself)
+static void		delf(void *content, size_t content_size)
 {
-	if (aself && *aself)
+	if (content_size)
+		content_size = 0;
+	free(content);
+}
+
+void			gnl_clean(int fd)
+{
+	t_gnl	*self;
+
+	if ((self = gnl_state(fd)))
 	{
-		ft_stack_clear(*aself);
-		ft_memdel((void **)aself);
+		ft_lstdel(&self->save, &delf);
+		ft_bzero(self, sizeof(t_gnl));
 	}
 }

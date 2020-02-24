@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_append.c                                   :+:      :+:    :+:   */
+/*   gnl.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 04:48:56 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/19 05:59:33 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/24 00:27:05 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/24 03:37:40 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list_private.h"
+#ifndef GNL_H
+# define GNL_H
 
-void	ft_list_append(t_list *self, void *data)
-{
-	ft_list_insert(self, self->length, data);
-}
+int		gnl_readline(int fd, char **aline);
+void	gnl_clean(int fd);
+
+#endif

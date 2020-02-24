@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 04:07:56 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 22:41:23 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/24 00:50:00 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "libft.h"
 # include "get_next_line.h"
 # include "ft_xexit.h"
+# include "gnl.h"
 # include "ft_printf.h"
 
 typedef struct	s_item

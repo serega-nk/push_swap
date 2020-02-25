@@ -6,18 +6,19 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/02 03:51:16 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/25 07:50:48 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/25 08:38:16 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= checker
+NAME_1		= checker
+NAME_2		= push_swap
 
 INC_DIR		= ./includes
 SRC_DIR		= ./src
 OBJ_DIR		= ./obj
 
-HEADERS		= checker.h
-SOURCES		= \
+HEADERS_1	= checker.h
+SOURCES_1	= \
 	$(addprefix checker/, \
 		$(addprefix app/, \
 			app_error.c \
@@ -58,6 +59,9 @@ SOURCES		= \
 		main.c \
 	) \
 
+HEADERS_2	= checker.h
+SOURCES_2	= main.c
+
 LIBFT_DIR	= ./libft
 LIBFT		= $(LIBFT_DIR)/libft.a
 
@@ -66,14 +70,19 @@ WFLAGS		= -Wall -Wextra -Werror
 IFLAGS		= -I$(INC_DIR)/ -I$(LIBFT_DIR)/includes/
 LFLAGS		= -L$(LIBFT_DIR)/ -lft
 
-INCS		= $(addprefix $(INC_DIR)/, $(HEADERS))
-SRCS		= $(addprefix $(SRC_DIR)/, $(SOURCES))
-OBJS		= $(addprefix $(OBJ_DIR)/, $(SOURCES:.c=.o))
+INCS		= $(addprefix $(INC_DIR)/, $(HEADERS_1))
+SRCS_1		= $(addprefix $(SRC_DIR)/, $(SOURCES_1))
+OBJS_1		= $(addprefix $(OBJ_DIR)/, $(SOURCES_1:.c=.o))
+SRCS_2		= $(addprefix $(SRC_DIR)/, $(SOURCES_2))
+OBJS_2		= $(addprefix $(OBJ_DIR)/, $(SOURCES_2:.c=.o))
 
-all: $(NAME)
+all: $(NAME_1) $(NAME_2)
 
-$(NAME): $(LIBFT) $(OBJS)
-	$(CC) $(WFLAGS) $(IFLAGS) $(OBJS) $(LFLAGS) -o $@
+$(NAME_1): $(LIBFT) $(OBJS_1)
+	$(CC) $(WFLAGS) $(IFLAGS) $(OBJS_1) $(LFLAGS) -o $@
+
+$(NAME_2): $(LIBFT) $(OBJS_2)
+	$(CC) $(WFLAGS) $(IFLAGS) $(OBJS_2) $(LFLAGS) -o $@
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INCS) Makefile
 	@mkdir -p ${@D}
@@ -89,12 +98,13 @@ clean:
 fclean:
 	$(MAKE) -C $(LIBFT_DIR) fclean
 	rm -rf $(OBJ_DIR)
-	rm -rf $(NAME)
+	rm -rf $(NAME_1)
+	rm -rf $(NAME_2)
 
 re: fclean all
 
 norm:
-	@norminette $(INCS) $(SRCS)
+	@norminette $(INCS) $(SRCS_1) $(SRCS_2)
 
 test: $(NAME)
 	echo "rra\npb\nsa\nrra\npa" | ./checker 3 2 1 0

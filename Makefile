@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/02 03:51:16 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/25 08:38:16 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/25 08:45:43 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ INC_DIR		= ./includes
 SRC_DIR		= ./src
 OBJ_DIR		= ./obj
 
-HEADERS_1	= checker.h
+HEADERS		= checker.h
 SOURCES_1	= \
 	$(addprefix checker/, \
 		$(addprefix app/, \
@@ -59,7 +59,6 @@ SOURCES_1	= \
 		main.c \
 	) \
 
-HEADERS_2	= checker.h
 SOURCES_2	= main.c
 
 LIBFT_DIR	= ./libft
@@ -70,10 +69,10 @@ WFLAGS		= -Wall -Wextra -Werror
 IFLAGS		= -I$(INC_DIR)/ -I$(LIBFT_DIR)/includes/
 LFLAGS		= -L$(LIBFT_DIR)/ -lft
 
-INCS		= $(addprefix $(INC_DIR)/, $(HEADERS_1))
+INCS		= $(addprefix $(INC_DIR)/, $(HEADERS))
 SRCS_1		= $(addprefix $(SRC_DIR)/, $(SOURCES_1))
-OBJS_1		= $(addprefix $(OBJ_DIR)/, $(SOURCES_1:.c=.o))
 SRCS_2		= $(addprefix $(SRC_DIR)/, $(SOURCES_2))
+OBJS_1		= $(addprefix $(OBJ_DIR)/, $(SOURCES_1:.c=.o))
 OBJS_2		= $(addprefix $(OBJ_DIR)/, $(SOURCES_2:.c=.o))
 
 all: $(NAME_1) $(NAME_2)

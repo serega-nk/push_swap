@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 01:21:13 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/25 07:25:54 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/25 16:17:19 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int				gnl_readline(int fd, char **aline)
 
 	if (!(self = gnl_state(fd)) || read(fd, NULL, 0) < 0)
 		return (-1);
-	while (!(ret = gnl_pop(self, aline)))
+	while (!gnl_pop(self, aline))
 	{
 		if (self->eof)
 			return (0);

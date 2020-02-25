@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/11/02 03:51:16 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/25 08:45:43 by bconchit         ###   ########.fr        #
+#    Created: 2020/02/25 11:53:48 by bconchit          #+#    #+#              #
+#    Updated: 2020/02/25 11:53:57 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,7 +105,7 @@ re: fclean all
 norm:
 	@norminette $(INCS) $(SRCS_1) $(SRCS_2)
 
-test: $(NAME)
+test: $(NAME_1)
 	echo "rra\npb\nsa\nrra\npa" | ./checker 3 2 1 0
 
 .PHONY: all clean fclean re norm $(LIBFT)

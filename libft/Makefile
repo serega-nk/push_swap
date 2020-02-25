@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/04 01:21:24 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/23 01:14:28 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/25 07:44:33 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -139,9 +139,6 @@ SOURCES		= \
 			ft_pf_print_unsigned.c \
 		) \
 	) \
-	$(addprefix get_next_line/, \
-		get_next_line.c \
-	) \
 	$(addprefix ft_xexit/, \
 		ft_on_xexit.c \
 		ft_xcheck.c \
@@ -150,6 +147,12 @@ SOURCES		= \
 		ft_xmalloc.c \
 		ft_xmemalloc.c \
 		ft_xstrdup.c \
+	) \
+	$(addprefix gnl/, \
+		gnl_clean.c \
+		gnl_readline.c \
+		gnl_split.c \
+		gnl_state.c \
 	) \
 	$(addprefix ft_avl_tree/, \
 		ft_avl_tree_apply.c \

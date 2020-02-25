@@ -6,18 +6,11 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 00:33:38 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/24 01:21:17 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/25 05:50:31 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gnl_private.h"
-
-static void		delf(void *content, size_t content_size)
-{
-	if (content_size)
-		content_size = 0;
-	free(content);
-}
 
 void			gnl_clean(int fd)
 {
@@ -25,7 +18,12 @@ void			gnl_clean(int fd)
 
 	if ((self = gnl_state(fd)))
 	{
-		ft_lstdel(&self->save, &delf);
+		while (*self->save)
+		{
+			ft_strdel(self->save);
+			self->save++;
+		}
+		ft_memdel((void **)&self->addr);
 		ft_bzero(self, sizeof(t_gnl));
 	}
 }

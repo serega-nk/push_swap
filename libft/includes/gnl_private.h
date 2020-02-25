@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnl.h                                              :+:      :+:    :+:   */
+/*   gnl_private.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/24 00:27:05 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/24 03:37:40 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/24 00:28:06 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/25 07:37:06 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GNL_H
-# define GNL_H
+#ifndef GNL_PRIVATE_H
+# define GNL_PRIVATE_H
 
-int		gnl_readline(int fd, char **aline);
-void	gnl_clean(int fd);
+# include <unistd.h>
+# include "libft.h"
+# include "ft_xexit.h"
+
+# define GNL_FDS 1000
+# define GNL_BUF 1000
+
+typedef struct	s_gnl
+{
+	char		**addr;
+	char		**save;
+	int 		eof;
+}				t_gnl;
+
+t_gnl			*gnl_state(int fd);
+char			**gnl_split(char *str, char sep);
 
 #endif

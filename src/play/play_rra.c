@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   play_rra.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/21 21:39:36 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/26 22:45:20 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/22 06:36:04 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/26 07:01:46 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
-#include "ft_printf.h"
+#include "play.h"
 
-
-int		main(int argc, char *argv[])
+void	play_rra(t_play *self)
 {
-	t_app	app;
-
-	ft_printf("count = %d\n", argc);
-	ft_on_xexit(&app_free, &app);
-	if (argc > 1)
-	{
-		app_init(&app);
-		app_load(&app, argv + 1, argc - 1);
-		app_play(&app);
-		app_free(&app);
-	}
-	return (EXIT_SUCCESS);
+	stack_reverse_rotate(self->stack_a);
 }

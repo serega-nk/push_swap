@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   play_rrr.c                                         :+:      :+:    :+:   */
+/*   play_rrb.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 06:36:17 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/22 06:36:24 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/22 06:36:12 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/26 07:01:49 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "play.h"
 
-void	play_rrr(t_app *self)
+void	play_rrb(t_play *self)
 {
-	stack_reverse_rotate(self->stack_a);
 	stack_reverse_rotate(self->stack_b);
 }

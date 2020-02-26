@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   play_pb.c                                          :+:      :+:    :+:   */
+/*   play_destroy.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 06:35:36 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 11:39:00 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/26 07:11:52 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/26 07:13:12 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "play.h"
 
-void	play_pb(t_app *self)
+void	play_destroy(t_play **aself)
 {
-	stack_push(self->stack_b, stack_pop(self->stack_a));
+	if (aself && *aself)
+	{
+		stack_destroy(&(*aself)->stack_b);
+		stack_destroy(&(*aself)->stack_a);
+		ft_memdel((void **)aself);
+	}
 }

@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/25 11:53:48 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/26 05:08:24 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/26 07:30:46 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,20 +27,23 @@ SOURCES_1	= \
 			app_load.c \
 			app_play.c \
 		) \
-		$(addprefix play/, \
-			play_pa.c \
-			play_pb.c \
-			play_ra.c \
-			play_rb.c \
-			play_rra.c \
-			play_rrb.c \
-			play_rr.c \
-			play_rrr.c \
-			play_sa.c \
-			play_sb.c \
-			play_ss.c \
-		) \
 		main.c \
+	) \
+	$(addprefix play/, \
+		play_create.c \
+		play_destroy.c \
+		play_load.c \
+		play_pa.c \
+		play_pb.c \
+		play_ra.c \
+		play_rb.c \
+		play_rra.c \
+		play_rrb.c \
+		play_rr.c \
+		play_rrr.c \
+		play_sa.c \
+		play_sb.c \
+		play_ss.c \
 	) \
 	$(addprefix stack/, \
 		stack_append.c \

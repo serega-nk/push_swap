@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/21 23:00:51 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/25 07:50:05 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/26 07:17:05 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 void	app_free(t_app *self)
 {
-	stack_destroy(&self->stack_b);
-	stack_destroy(&self->stack_a);
+	play_destroy(&self->play);
 }

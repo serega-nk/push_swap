@@ -6,13 +6,13 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 06:16:03 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/26 06:49:39 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/26 07:20:26 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static int	exec(t_app *self, const char *cmd, const char *find, void (*f)())
+static int	exec(t_play *self, const char *cmd, const char *find, void (*f)())
 {
 	if (ft_strcmp(cmd, find) == 0)
 	{
@@ -22,7 +22,7 @@ static int	exec(t_app *self, const char *cmd, const char *find, void (*f)())
 	return (0);
 }
 
-static int	play(t_app *self, const char *cmd)
+static int	play(t_play *self, const char *cmd)
 {
 	return (
 		exec(self, cmd, "sa\n", &play_sa) ||
@@ -45,7 +45,7 @@ void		app_play(t_app *self)
 
 	while (gnl_readline(STDIN_FILENO, &cmd) > 0)
 	{
-		ret = play(self, cmd);
+		ret = play(self->play, cmd);
 		ft_strdel(&cmd);
 		if (!ret)
 		{
@@ -54,7 +54,7 @@ void		app_play(t_app *self)
 		}
 	}
 	gnl_clean(STDIN_FILENO);
-	if (stack_empty(self->stack_b) && stack_ordered(self->stack_a))
+	if (stack_empty(self->play->stack_b) && stack_ordered(self->play->stack_a))
 		ft_putendl("OK");
 	else
 		ft_putendl("KO");

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   play_sa.c                                          :+:      :+:    :+:   */
+/*   play_pb.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 06:36:33 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/22 06:36:34 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/22 06:35:36 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/26 07:01:38 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "play.h"
 
-void	play_sa(t_app *self)
+void	play_pb(t_play *self)
 {
-	stack_swap(self->stack_a);
+	stack_push(self->stack_b, stack_pop(self->stack_a));
 }

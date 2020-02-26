@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 06:16:03 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/26 06:49:39 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/26 23:28:23 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,16 @@ static int	play(t_app *self, const char *cmd)
 void		app_play(t_app *self)
 {
 	char	*cmd;
-	int		ret;
 
 	while (gnl_readline(STDIN_FILENO, &cmd) > 0)
 	{
-		ret = play(self, cmd);
-		ft_strdel(&cmd);
-		if (!ret)
+		if (!play(self, cmd))
 		{
+			ft_strdel(&cmd);
 			gnl_clean(STDIN_FILENO);
 			app_error();	
 		}
+		ft_strdel(&cmd);
 	}
 	gnl_clean(STDIN_FILENO);
 	if (stack_empty(self->stack_b) && stack_ordered(self->stack_a))

@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_push.c                                       :+:      :+:    :+:   */
+/*   stack_ordered.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/23 01:20:34 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 13:01:36 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/23 04:15:39 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/26 02:13:22 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "stack_private.h"
 
-void	stack_push(t_stack *self, t_item *item)
+int		stack_ordered(t_stack *self)
 {
-	if (item)
+	t_item	*walk;
+
+	walk = self->root;
+	while (walk && walk->next && walk->next != self->root)
 	{
-		if (self->root)
-		{
-			item->prev = self->root->prev;
-			item->next = self->root;
-			item->prev->next = item;
-			item->next->prev = item;
-		}
-		else
-		{
-			item->prev = item;
-			item->next = item;
-		}
-		self->root = item;
+		if ((*self->cmpf)(walk->data, walk->next->data) > 0)
+			return (0);
+		walk = walk->next;
 	}
+	return (1);
 }

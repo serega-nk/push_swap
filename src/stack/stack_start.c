@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_item_destroy.c                               :+:      :+:    :+:   */
+/*   stack_start.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/23 13:44:45 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 13:46:03 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/26 04:51:35 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/26 04:53:04 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "stack.h"
 
-void	stack_item_destroy(t_item **aself)
+void	stack_start(t_stack *self)
 {
-	ft_memdel((void **)aself);
+	self->next = self->root;
 }

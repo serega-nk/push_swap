@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_rotate.c                                     :+:      :+:    :+:   */
+/*   stack_data.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/23 01:17:25 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 04:23:09 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/26 02:43:08 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/26 02:44:33 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "stack_private.h"
 
-void	stack_rotate(t_stack *self)
+void	*stack_data(t_item *item)
 {
-	if (self->root)
-		self->root = self->root->next;
+	if (item)
+		return (item->data);
+	return (NULL);
 }

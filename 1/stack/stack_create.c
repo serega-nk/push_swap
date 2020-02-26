@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_clean.c                                      :+:      :+:    :+:   */
+/*   stack_create.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/23 13:38:15 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 13:45:55 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/22 01:51:43 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/26 02:45:42 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "stack_private.h"
 
-void	stack_clean(t_stack *self)
+t_stack		*stack_create(int (*cmpf)(), void *(*dupf)(), void (*delf)())
 {
-	t_item	*item;
+	t_stack		*self;
 
-	while ((item = stack_pop(self)))
-		stack_item_destroy(&item);
+	self = (t_stack *)ft_xmemalloc(sizeof(t_stack));
+	self->cmpf = cmpf;
+	self->dupf = dupf;
+	self->delf = delf;
+	return (self);
 }

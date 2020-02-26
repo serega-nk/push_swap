@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_reverse_rotate.c                             :+:      :+:    :+:   */
+/*   stack_swap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/23 01:17:36 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 04:23:18 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/23 01:17:13 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/26 03:12:39 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "stack.h"
 
-void	stack_reverse_rotate(t_stack *self)
+void	stack_swap(t_stack *self)
 {
-	if (self->root)
-		self->root = self->root->prev;
+	t_stack_item	*save;
+
+	save = stack_pop(self);
+	stack_rotate(self);
+	stack_push(self, save);
+	stack_reverse_rotate(self);
 }

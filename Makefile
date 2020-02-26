@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/25 11:53:48 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/25 11:53:57 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/26 05:08:24 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ INC_DIR		= ./includes
 SRC_DIR		= ./src
 OBJ_DIR		= ./obj
 
-HEADERS		= checker.h
+HEADERS		= checker.h stack.h
 SOURCES_1	= \
 	$(addprefix checker/, \
 		$(addprefix app/, \
@@ -40,26 +40,51 @@ SOURCES_1	= \
 			play_sb.c \
 			play_ss.c \
 		) \
-		$(addprefix stack/, \
-			stack_append.c \
-			stack_clean.c \
-			stack_create.c \
-			stack_destroy.c \
-			stack_empty.c \
-			stack_item_destroy.c \
-			stack_item.c \
-			stack_ordered.c \
-			stack_pop.c \
-			stack_push.c \
-			stack_reverse_rotate.c \
-			stack_rotate.c \
-			stack_swap.c \
-			stack_unique.c \
-		) \
 		main.c \
 	) \
+	$(addprefix stack/, \
+		stack_append.c \
+		stack_clean.c \
+		stack_count.c \
+		stack_create.c \
+		stack_destroy.c \
+		stack_empty.c \
+		stack_get.c \
+		stack_item_destroy.c \
+		stack_item.c \
+		stack_next.c \
+		stack_ordered.c \
+		stack_pop.c \
+		stack_push.c \
+		stack_reverse_rotate.c \
+		stack_rotate.c \
+		stack_start.c \
+		stack_swap.c \
+		stack_unique.c \
+	) \
 
-SOURCES_2	= main.c
+SOURCES_2	= \
+	main.c \
+	$(addprefix stack/, \
+		stack_append.c \
+		stack_clean.c \
+		stack_count.c \
+		stack_create.c \
+		stack_destroy.c \
+		stack_empty.c \
+		stack_get.c \
+		stack_item_destroy.c \
+		stack_item.c \
+		stack_next.c \
+		stack_ordered.c \
+		stack_pop.c \
+		stack_push.c \
+		stack_reverse_rotate.c \
+		stack_rotate.c \
+		stack_start.c \
+		stack_swap.c \
+		stack_unique.c \
+	) \
 
 LIBFT_DIR	= ./libft
 LIBFT		= $(LIBFT_DIR)/libft.a
@@ -108,4 +133,4 @@ norm:
 test: $(NAME_1)
 	echo "rra\npb\nsa\nrra\npa" | ./checker 3 2 1 0
 
-.PHONY: all clean fclean re norm $(LIBFT)
+.PHONY: all clean fclean re norm test $(LIBFT)

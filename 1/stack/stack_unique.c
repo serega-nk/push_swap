@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_ordered.c                                    :+:      :+:    :+:   */
+/*   stack_unique.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/23 04:15:39 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 14:00:14 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/23 11:32:45 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/26 02:31:56 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "stack_private.h"
 
-int		stack_ordered(t_stack *self)
+int		stack_unique(t_stack *self, void *data)
 {
 	t_item	*walk;
 
-	walk = self->root;
-	while (walk && walk->next && walk->next != self->root)
+	if (self->cmpf)
 	{
-		if (walk->value > walk->next->value)
-			return (0);
-		walk = walk->next;
+		walk = self->root;
+		while (walk)
+		{
+			if ((*self->cmpf)(walk->data, data) == 0)
+				return (0);
+			walk = walk->next;
+			if (walk == self->root)
+				break ;
+		}
 	}
 	return (1);
 }

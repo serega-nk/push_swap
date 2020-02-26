@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_unique.c                                     :+:      :+:    :+:   */
+/*   stack_pop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/23 11:32:45 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 21:05:05 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/23 12:14:16 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/26 05:08:53 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "stack.h"
 
-int		stack_unique(t_stack *self, int value)
+t_stack_item	*stack_pop(t_stack *self)
 {
-	t_item	*walk;
+	t_stack_item	*item;
 
-	walk = self->root;
-	while (walk)
+	if ((item = self->root))
 	{
-		if (walk->value == value)
-			return (0);
-		walk = walk->next;
-		if (walk == self->root)
-			break ;
+		if (item == item->next)
+		{
+			self->root = NULL;
+		}
+		else
+		{
+			self->root = item->next;
+			item->next->prev = item->prev;
+			item->prev->next = item->next;
+		}
+		item->prev = NULL;
+		item->next = NULL;
+		self->count--;
 	}
-	return (1);
+	return (item);
 }

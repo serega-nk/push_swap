@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_create.c                                     :+:      :+:    :+:   */
+/*   stack_next.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 01:51:43 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/22 06:31:38 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/26 01:00:37 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/26 03:03:25 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "stack_private.h"
 
-t_stack		*stack_create(void)
+int		stack_next(t_stack *self, void **adata)
 {
-	t_stack		*self;
-
-	self = (t_stack *)ft_xmemalloc(sizeof(t_stack));
-	return (self);
+	return (0);
 }

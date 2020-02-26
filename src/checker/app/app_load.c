@@ -6,35 +6,36 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/21 22:07:49 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/23 23:04:13 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/26 06:30:48 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static int	parse_number(char **addr, int *avalue)
+static int	parse_number(const char *str, int *avalue)
 {
 	int		negative;
 	long	prev;
 	long	curr;
 
-	while (**addr == ' ')
-		(*addr)++;
-	negative = (**addr == '-') ? 1 : 0;
-	if (**addr == '-' || **addr == '+')
-		(*addr)++;
-	if (ft_isdigit(**addr))
+	negative = (*str == '-') ? 1 : 0;
+	if (*str == '-' || *str == '+')
+		str++;
+	if (ft_isdigit(*str))
 	{
 		curr = 0;
-		while (ft_isdigit(**addr))
+		while (ft_isdigit(*str))
 		{
 			prev = curr;
-			curr = curr * 10 + (*(*addr)++ - '0');
+			curr = curr * 10 + (*str++ - '0');
 			if ((int)(curr - negative) < (int)(prev - negative))
 				return (0);
 		}
-		if (**addr == '\0' || **addr == ' ')
-			return ((*avalue = (int)(curr * (negative ? -1 : 1))) || 1);
+		if (*str == '\0')
+		{
+			*avalue = (int)(curr * (negative ? -1 : 1));
+			return (1);
+		}
 	}
 	return (0);
 }
@@ -43,23 +44,15 @@ void		app_load(t_app *self, char *arr[], int count)
 {
 	int		index;
 	int		value;
-	char	*ptr;
-	int		ret;
 
 	index = 0;
 	while (index < count)
 	{
-		ptr = arr[index];
-		ret = 0;
-		while (parse_number(&ptr, &value))
-		{
-			if (!stack_unique(self->stack_a, value))
-				app_error();
-			stack_append(self->stack_a, value);
-			ret++;
-		}
-		if (*ptr || ret == 0)
+		if (!parse_number(arr[index], &value))
 			app_error();
+		if (!stack_unique(self->stack_a, value))
+			app_error();
+		stack_append(self->stack_a, value);
 		index++;
 	}
 }

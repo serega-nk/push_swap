@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/25 11:53:48 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/26 05:08:24 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/27 02:23:56 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,6 @@ SOURCES_1	= \
 	) \
 
 SOURCES_2	= \
-	main.c \
 	$(addprefix stack/, \
 		stack_append.c \
 		stack_clean.c \
@@ -84,6 +83,9 @@ SOURCES_2	= \
 		stack_start.c \
 		stack_swap.c \
 		stack_unique.c \
+	) \
+	$(addprefix push_swap/, \
+		main.c \
 	) \
 
 LIBFT_DIR	= ./libft

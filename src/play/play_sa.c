@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 06:36:33 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/26 07:01:58 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/27 07:25:27 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,5 @@
 void	play_sa(t_play *self)
 {
 	stack_swap(self->stack_a);
+	play_output(self, "sa");
 }

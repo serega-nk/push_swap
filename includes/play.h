@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 07:02:18 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/26 07:31:31 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/27 07:27:09 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 
 typedef struct	s_play
 {
+	int			output;
 	t_stack		*stack_a;
 	t_stack		*stack_b;
 }				t_play;
 
-t_play			*play_create(void);
+t_play			*play_create(int output);
 void			play_destroy(t_play **aself);
-int				play_load(t_play *self, char *arr[], int count);
+void			play_output(t_play *self, char *cmd);
 
 void			play_sa(t_play *self);
 void			play_sb(t_play *self);

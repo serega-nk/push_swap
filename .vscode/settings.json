@@ -1,0 +1,8 @@
+{
+	"files.associations": {
+		"checker.h": "c",
+		"ios": "c",
+		"stack": "c",
+		"__locale": "c"
+	}
+}

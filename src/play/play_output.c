@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   play_rb.c                                          :+:      :+:    :+:   */
+/*   play_output.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 06:35:45 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/27 07:25:58 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/27 07:23:24 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/27 07:26:43 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "play.h"
 
-void	play_rb(t_play *self)
+void	play_output(t_play *self, char *cmd)
 {
-	stack_rotate(self->stack_b);
-	play_output(self, "rb");
+	if (self->output)
+		ft_putendl(cmd);
 }

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   play_load.c                                        :+:      :+:    :+:   */
+/*   stack_load.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/21 22:07:49 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/26 07:30:32 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/27 03:21:12 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "play.h"
+#include "stack.h"
 
 static int	parse_number(char **addr, int *avalue)
 {
@@ -39,7 +39,7 @@ static int	parse_number(char **addr, int *avalue)
 	return (0);
 }
 
-int			play_load(t_play *self, char *arr[], int count)
+int			stack_load(t_stack *self, char *arr[], int count)
 {
 	int		index;
 	int		value;
@@ -53,9 +53,9 @@ int			play_load(t_play *self, char *arr[], int count)
 		ret = 0;
 		while (parse_number(&ptr, &value))
 		{
-			if (!stack_unique(self->stack_a, value))
+			if (!stack_unique(self, value))
 				return (0);
-			stack_append(self->stack_a, value);
+			stack_append(self, value);
 			ret++;
 		}
 		if (*ptr || ret == 0)

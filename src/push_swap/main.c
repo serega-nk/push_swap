@@ -6,42 +6,43 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 01:12:18 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/26 05:07:49 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/27 03:19:46 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "ft_printf.h"
-#include "stack.h"
-
+#include "push_swap.h"
 
 int		main(void)
 {
-	t_stack		*stack;
+	// t_play	*play;
 
-	stack = stack_create();
+	// play = play_create();
 	
-	stack_append(stack, 1);
-	stack_append(stack, 3);
-	stack_append(stack, 4);
-	stack_append(stack, 7);
-	stack_append(stack, 8);
+	// play_destroy(&play);
 
-	stack_rotate(stack);
+	// stack = stack_create();
 	
-	int		value;
+	// stack_append(stack, 1);
+	// stack_append(stack, 3);
+	// stack_append(stack, 4);
+	// stack_append(stack, 7);
+	// stack_append(stack, 8);
 
-	stack_start(stack);
-	while (stack_next(stack, &value))
-	{
-		ft_printf("%d\n", value);
-	}
+	// stack_rotate(stack);
 	
-	ft_printf("%d\n", stack_get(stack, 1));
+	// int		value;
 
-	ft_printf("count = %d\n", stack_count(stack));
+	// stack_start(stack);
+	// while (stack_next(stack, &value))
+	// {
+	// 	ft_printf("%d\n", value);
+	// }
+	
+	// ft_printf("%d\n", stack_get(stack, 1));
 
-	stack_destroy(&stack);
+	// ft_printf("count = %d\n", stack_count(stack));
+
+	// stack_destroy(&stack);
 	
 	return (0);
 }

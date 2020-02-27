@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/25 11:53:48 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/27 02:23:56 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/27 03:19:31 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ SOURCES_1	= \
 		stack_get.c \
 		stack_item_destroy.c \
 		stack_item.c \
+		stack_load.c \
 		stack_next.c \
 		stack_ordered.c \
 		stack_pop.c \
@@ -74,6 +75,7 @@ SOURCES_2	= \
 		stack_get.c \
 		stack_item_destroy.c \
 		stack_item.c \
+		stack_load.c \
 		stack_next.c \
 		stack_ordered.c \
 		stack_pop.c \

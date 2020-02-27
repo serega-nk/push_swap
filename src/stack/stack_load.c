@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/21 22:07:49 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/27 03:21:12 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/27 21:50:33 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,26 +39,32 @@ static int	parse_number(char **addr, int *avalue)
 	return (0);
 }
 
+static int	load(t_stack *self, char *str)
+{
+	int		count;
+	int		value;
+
+	count = 0;
+	while (parse_number(&str, &value))
+	{
+		if (!stack_unique(self, value))
+			return (0);
+		stack_append(self, value);
+		count++;
+	}
+	if (*str || count == 0)
+		return (0);
+	return (1);
+}
+
 int			stack_load(t_stack *self, char *arr[], int count)
 {
 	int		index;
-	int		value;
-	char	*ptr;
-	int		ret;
 
 	index = 0;
 	while (index < count)
 	{
-		ptr = arr[index];
-		ret = 0;
-		while (parse_number(&ptr, &value))
-		{
-			if (!stack_unique(self, value))
-				return (0);
-			stack_append(self, value);
-			ret++;
-		}
-		if (*ptr || ret == 0)
+		if (!load(self, arr[index]))
 			return (0);
 		index++;
 	}

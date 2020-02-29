@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 06:16:03 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/29 11:51:26 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/29 12:58:46 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	exec(t_app *self, const char *cmd, const char *find, void (*f)())
 {
 	if (ft_strcmp(cmd, find) == 0)
 	{
-		(*f)(self);
+		(*f)(self->play);
 		return (1);
 	}
 	return (0);

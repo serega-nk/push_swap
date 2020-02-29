@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/25 11:53:48 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/29 12:32:13 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/29 13:01:35 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,30 +18,8 @@ SRC_DIR		= ./src
 OBJ_DIR		= ./obj
 
 HEADERS		= checker.h play.h push_swap.h stack.h
-SOURCES_1	= \
-	$(addprefix checker/, \
-		$(addprefix app/, \
-			app_error.c \
-			app_free.c \
-			app_init.c \
-			app_load.c \
-			app_play.c \
-		) \
-		$(addprefix play/, \
-			play_pa.c \
-			play_pb.c \
-			play_ra.c \
-			play_rb.c \
-			play_rra.c \
-			play_rrb.c \
-			play_rr.c \
-			play_rrr.c \
-			play_sa.c \
-			play_sb.c \
-			play_ss.c \
-		) \
-		main.c \
-	) \
+
+SOURCES_S	= \
 	$(addprefix stack/, \
 		stack_append.c \
 		stack_clean.c \
@@ -65,7 +43,7 @@ SOURCES_1	= \
 		stack_unique.c \
 	) \
 
-SOURCES_2	= \
+SOURCES_P	= \
 	$(addprefix play/, \
 		play_create.c \
 		play_destroy.c \
@@ -82,28 +60,23 @@ SOURCES_2	= \
 		play_sb.c \
 		play_ss.c \
 	) \
-	$(addprefix stack/, \
-		stack_append.c \
-		stack_clean.c \
-		stack_count.c \
-		stack_create.c \
-		stack_destroy.c \
-		stack_empty.c \
-		stack_get.c \
-		stack_item_destroy.c \
-		stack_item.c \
-		stack_load.c \
-		stack_next.c \
-		stack_ordered.c \
-		stack_pop.c \
-		stack_push.c \
-		stack_reverse_rotate.c \
-		stack_rotate.c \
-		stack_start.c \
-		stack_swap.c \
-		stack_to_array.c \
-		stack_unique.c \
+
+SOURCES_1	= \
+	$(SOURCES_S) \
+	$(SOURCES_P) \
+	$(addprefix checker/, \
+		$(addprefix app/, \
+			app_error.c \
+			app_free.c \
+			app_load.c \
+			app_play.c \
+		) \
+		main.c \
 	) \
+
+SOURCES_2	= \
+	$(SOURCES_S) \
+	$(SOURCES_P) \
 	$(addprefix push_swap/, \
 		$(addprefix app/, \
 			app_error.c \

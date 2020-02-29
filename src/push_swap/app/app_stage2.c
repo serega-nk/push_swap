@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 11:28:13 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/29 17:23:01 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/29 21:04:20 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,14 @@
 void	app_stage2(t_app *self)
 {
 	int 	index;
-	
+
+	stack_rotate(self->stack_a);
+	stack_rotate(self->stack_a);
+	stack_rotate(self->stack_a);
+
+
 	self->numbers = ft_xmemalloc(sizeof(int) * self->count);
 	self->indexes = ft_xmemalloc(sizeof(int) * self->count);
-
 	self->count = stack_count(self->stack_a);
 	stack_to_array(self->stack_a, self->numbers, self->count);
 
@@ -48,6 +52,7 @@ void	app_stage2(t_app *self)
 	int 	count_a = stack_count(self->stack_a);
 	int 	count_b = stack_count(self->stack_b);
 
+	
 	index = 0;
 	stack_start(self->stack_b);	
 	while (stack_next(self->stack_b, &value))

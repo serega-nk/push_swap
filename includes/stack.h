@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 04:07:56 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/27 03:17:25 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/28 06:50:02 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void			stack_reverse_rotate(t_stack *self);
 void			stack_rotate(t_stack *self);
 void			stack_start(t_stack *self);
 void			stack_swap(t_stack *self);
+void			stack_to_array(t_stack *self, int *array, int count);
 int				stack_unique(t_stack *self, int value);
 
 #endif

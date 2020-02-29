@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 07:11:52 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/26 07:13:12 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/29 11:15:06 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,5 @@
 
 void	play_destroy(t_play **aself)
 {
-	if (aself && *aself)
-	{
-		stack_destroy(&(*aself)->stack_b);
-		stack_destroy(&(*aself)->stack_a);
-		ft_memdel((void **)aself);
-	}
+	ft_memdel((void **)aself);
 }

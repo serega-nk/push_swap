@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 06:16:03 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/26 23:28:23 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/29 11:51:26 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void		app_play(t_app *self)
 		{
 			ft_strdel(&cmd);
 			gnl_clean(STDIN_FILENO);
-			app_error();	
+			app_error();
 		}
 		ft_strdel(&cmd);
 	}

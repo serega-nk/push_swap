@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/25 11:53:48 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/27 03:19:31 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/29 12:32:13 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ INC_DIR		= ./includes
 SRC_DIR		= ./src
 OBJ_DIR		= ./obj
 
-HEADERS		= checker.h stack.h
+HEADERS		= checker.h play.h push_swap.h stack.h
 SOURCES_1	= \
 	$(addprefix checker/, \
 		$(addprefix app/, \
@@ -61,10 +61,27 @@ SOURCES_1	= \
 		stack_rotate.c \
 		stack_start.c \
 		stack_swap.c \
+		stack_to_array.c \
 		stack_unique.c \
 	) \
 
 SOURCES_2	= \
+	$(addprefix play/, \
+		play_create.c \
+		play_destroy.c \
+		play_output.c \
+		play_pa.c \
+		play_pb.c \
+		play_ra.c \
+		play_rb.c \
+		play_rra.c \
+		play_rrb.c \
+		play_rr.c \
+		play_rrr.c \
+		play_sa.c \
+		play_sb.c \
+		play_ss.c \
+	) \
 	$(addprefix stack/, \
 		stack_append.c \
 		stack_clean.c \
@@ -84,9 +101,25 @@ SOURCES_2	= \
 		stack_rotate.c \
 		stack_start.c \
 		stack_swap.c \
+		stack_to_array.c \
 		stack_unique.c \
 	) \
 	$(addprefix push_swap/, \
+		$(addprefix app/, \
+			app_error.c \
+			app_free.c \
+			app_load.c \
+			app_output.c \
+			app_stage1.c \
+			app_stage2.c \
+		) \
+		$(addprefix stage1/, \
+			stage1_free.c \
+			stage1_indexes.c \
+			stage1_median.c \
+			stage1_numbers.c \
+			stage1_play.c \
+		) \
 		main.c \
 	) \
 

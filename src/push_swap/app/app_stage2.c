@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 11:28:13 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/29 13:29:17 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/29 17:23:01 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,18 @@ void	app_stage2(t_app *self)
 	ft_printf("count A = %d\n", stack_count(self->stack_a));
 	ft_printf("count B = %d\n", stack_count(self->stack_b));
 
+	int		value;
+	int 	count_a = stack_count(self->stack_a);
+	int 	count_b = stack_count(self->stack_b);
+
+	index = 0;
+	stack_start(self->stack_b);	
+	while (stack_next(self->stack_b, &value))
+	{
+		int pos = stack_place(self->stack_a, value);
+		ft_printf("value = %2d, A pos = %2d, rev = %3d B pos = %2d, rev %3d\n", value, pos, pos - count_a, index, index - count_b);
+		index++;
+	}
 	// if (self)
 	// {
 	// 	ft_putendl("stage2");

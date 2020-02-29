@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stage1_numbers.c                                   :+:      :+:    :+:   */
+/*   stack_place.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/29 12:11:59 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/29 16:57:55 by bconchit         ###   ########.fr       */
+/*   Created: 2020/02/29 16:36:22 by bconchit          #+#    #+#             */
+/*   Updated: 2020/02/29 17:08:43 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "stack.h"
 
-void	stage1_numbers(t_app *self)
+int		stack_place(t_stack *self, int value)
 {
-	self->numbers = ft_xmemalloc(sizeof(int) * self->count);
-	stack_to_array(self->stack_a, self->numbers, self->count);
-	ft_printf("STACK A\n");
-	int index = 0;
-	while (index < self->count)
+	t_stack_item	*walk;
+	int				index;
+
+	index = 0;
+	if ((walk = self->root))
 	{
-		ft_printf(" = %d\n", self->numbers[index]);
-		index++;	
+		while (walk->value < value)
+		{
+			index++;
+			if ((walk = walk->next) == self->root)
+				break ;
+		}
 	}
+	return (index);
 }

@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/25 11:53:48 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/29 13:33:29 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/29 16:56:54 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ SOURCES_S	= \
 		stack_load.c \
 		stack_next.c \
 		stack_ordered.c \
+		stack_place.c \
 		stack_pop.c \
 		stack_push.c \
 		stack_reverse_rotate.c \

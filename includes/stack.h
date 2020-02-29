@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 04:07:56 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/28 06:50:02 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/29 16:56:29 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ t_stack_item	*stack_item(int value);
 int				stack_load(t_stack *self, char *arr[], int count);
 int				stack_next(t_stack *self, int *avalue);
 int				stack_ordered(t_stack *self);
+int				stack_place(t_stack *self, int value);
 t_stack_item	*stack_pop(t_stack *self);
 void			stack_push(t_stack *self, t_stack_item *item);
 void			stack_reverse_rotate(t_stack *self);

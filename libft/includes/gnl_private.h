@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 00:28:06 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/25 07:37:06 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/29 13:09:19 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct	s_gnl
 {
 	char		**addr;
 	char		**save;
-	int 		eof;
+	int			eof;
 }				t_gnl;
 
 t_gnl			*gnl_state(int fd);

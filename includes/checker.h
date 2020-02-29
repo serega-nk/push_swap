@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 04:07:56 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/29 13:00:03 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/29 13:08:47 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct	s_app
 {
 	t_stack		*stack_a;
 	t_stack		*stack_b;
-	t_play		*play;	
+	t_play		*play;
 }				t_app;
 
 void			app_error(void);

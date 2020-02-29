@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/25 11:53:48 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/29 13:01:35 by bconchit         ###   ########.fr        #
+#    Updated: 2020/02/29 13:33:29 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -100,7 +100,7 @@ LIBFT_DIR	= ./libft
 LIBFT		= $(LIBFT_DIR)/libft.a
 
 CC			= gcc
-WFLAGS		= -Wall -Wextra -Werror
+WFLAGS		= #-Wall -Wextra -Werror
 IFLAGS		= -I$(INC_DIR)/ -I$(LIBFT_DIR)/includes/
 LFLAGS		= -L$(LIBFT_DIR)/ -lft
 
@@ -143,4 +143,4 @@ norm:
 test: $(NAME_1)
 	echo "rra\npb\nsa\nrra\npa" | ./checker 3 2 1 0
 
-.PHONY: all clean fclean re norm test $(LIBFT)
+.PHONY: all clean fclean re norm test

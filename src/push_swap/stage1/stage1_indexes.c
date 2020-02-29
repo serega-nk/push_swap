@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 12:13:30 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/29 12:19:37 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/02/29 13:42:11 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void		longest_increasing_subsequence(t_app *self)
 			sequence = self->indexes[index];
 		index++;
 	}
-	while (--index > 0)
+	while (--index >= 0)
 		if ((self->indexes[index] = (self->indexes[index] == sequence)))
 			sequence--;
 }

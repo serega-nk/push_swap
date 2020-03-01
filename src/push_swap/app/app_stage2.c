@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 11:28:13 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/29 21:04:20 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/03/01 21:43:09 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	app_stage2(t_app *self)
 {
 	int 	index;
 
-	stack_rotate(self->stack_a);
-	stack_rotate(self->stack_a);
-	stack_rotate(self->stack_a);
+	// stack_rotate(self->stack_a);
+	// stack_rotate(self->stack_a);
+	// stack_rotate(self->stack_a);
 
 
 	self->numbers = ft_xmemalloc(sizeof(int) * self->count);
@@ -52,14 +52,29 @@ void	app_stage2(t_app *self)
 	int 	count_a = stack_count(self->stack_a);
 	int 	count_b = stack_count(self->stack_b);
 
-	
-	index = 0;
+	int		pos_a;
+	int		pos_b;
+
+	pos_b = 0;
 	stack_start(self->stack_b);	
 	while (stack_next(self->stack_b, &value))
 	{
-		int pos = stack_place(self->stack_a, value);
-		ft_printf("value = %2d, A pos = %2d, rev = %3d B pos = %2d, rev %3d\n", value, pos, pos - count_a, index, index - count_b);
-		index++;
+		pos_a = stack_place(self->stack_a, value);
+		ft_printf("val = %2d, A pos = %2d, rev = %3d B pos = %2d, rev = %3d", value, pos_a, pos_a - count_a, pos_b, pos_b - count_b);
+		
+		int step;
+		
+		step = ft_max(pos_a, pos_b);
+		ft_printf(", a1 = %2d", step);
+		step = ft_max(count_a - pos_a, count_b - pos_b);
+		ft_printf(", a2 = %2d", step);
+		step = pos_a + count_b - pos_b;
+		ft_printf(", a3 = %2d", step);
+		step = count_a - pos_a + pos_b;
+		ft_printf(", a4 = %2d", step);
+
+		ft_printf("\n");
+		pos_b++;
 	}
 	// if (self)
 	// {

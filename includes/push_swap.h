@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 06:05:48 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/29 12:20:59 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/03/01 21:41:09 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct	s_app
 	int			count;
 	int			*numbers;
 	int			*indexes;
-	int			median;
+	int			median;	
 }				t_app;
 
 void			app_error(void);

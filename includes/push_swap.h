@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 06:05:48 by bconchit          #+#    #+#             */
-/*   Updated: 2020/03/01 21:41:09 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/03/07 20:57:08 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,22 @@
 # include "stack.h"
 # include "play.h"
 
+typedef struct	s_greedy
+{
+	int			result;
+	int			value;
+	int			pos_a;
+	int			pos_b;
+	int			len_a;
+	int			len_b;
+	int			rev_a;
+	int			rev_b;
+	int			res_1;
+	int			res_2;
+	int			res_3;
+	int			res_4;
+}				t_greedy;
+
 typedef struct	s_app
 {
 	t_stack		*stack_a;
@@ -26,7 +42,8 @@ typedef struct	s_app
 	int			count;
 	int			*numbers;
 	int			*indexes;
-	int			median;	
+	int			median;
+	t_greedy	greedy;
 }				t_app;
 
 void			app_error(void);

@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/04 01:21:24 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/29 13:11:51 by bconchit         ###   ########.fr        #
+#    Updated: 2020/03/07 20:11:17 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,6 +98,7 @@ SOURCES		= \
 		ft_lstrev.c \
 		ft_index.c \
 		ft_max.c \
+		ft_min.c \
 		ft_swap.c \
 		ft_quicksort.c \
 	) \

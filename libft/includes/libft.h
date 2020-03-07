@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 21:57:31 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/27 06:52:19 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/03/07 20:10:00 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ size_t				ft_lstlen(t_list *lst);
 void				ft_lstrev(t_list **alst);
 int					ft_index(char *str, char c);
 int					ft_max(int a, int b);
+int					ft_min(int a, int b);
 void				ft_swap(int *a, int *b);
 void				ft_quicksort(int arr[], int count);
 

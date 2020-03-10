@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   app_stage2.c                                       :+:      :+:    :+:   */
+/*   stage2_calc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/03 09:47:19 by bconchit          #+#    #+#             */
-/*   Updated: 2020/03/10 10:07:27 by bconchit         ###   ########.fr       */
+/*   Created: 2020/03/10 10:08:03 by bconchit          #+#    #+#             */
+/*   Updated: 2020/03/10 10:10:35 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int		greedy_place(t_app *self, int place)
+static int	greedy_place(t_stack *self, int place)
 {
 	int		index;
 	int		value;
 	int		prev;
 
 	index = 0;
-	stack_start(self->stack_a);
-	while (stack_next(self->stack_a, &value))
+	stack_start(self);
+	while (stack_next(self, &value))
 	{
 		if (index == 0)
 			prev = value;
@@ -39,7 +39,7 @@ static int		greedy_place(t_app *self, int place)
 	return (0);
 }
 
-static void		greedy_calc(t_app *self, t_greedy *save, t_greedy *temp)
+void		stage2_calc(t_app *self, t_greedy *save, t_greedy *temp)
 {
 	ft_bzero((void *)temp, sizeof(t_greedy));
 	ft_bzero((void *)save, sizeof(t_greedy));
@@ -48,7 +48,7 @@ static void		greedy_calc(t_app *self, t_greedy *save, t_greedy *temp)
 	stack_start(self->stack_b);
 	while (stack_next(self->stack_b, &temp->value))
 	{
-		temp->pos_a = greedy_place(self, temp->value);
+		temp->pos_a = greedy_place(self->stack_a, temp->value);
 		temp->rev_a = temp->len_a - temp->pos_a;
 		temp->rev_b = temp->len_b - temp->pos_b;
 		temp->res_1 = ft_max(temp->pos_a, temp->pos_b);
@@ -63,45 +63,5 @@ static void		greedy_calc(t_app *self, t_greedy *save, t_greedy *temp)
 		if (save->result == 0)
 			return ;
 		temp->pos_b++;
-	}
-}
-
-static void		greedy_fixx(t_app *self, t_greedy *save)
-{
-	if (self)
-	{
-		if (save->result == save->res_1)
-		{
-			save->rev_a = 0;
-			save->rev_b = 0;
-		}
-		else if (save->result == save->res_2)
-		{
-			save->pos_a = 0;
-			save->pos_b = 0;
-		}
-		else if (save->result == save->res_3)
-		{
-			save->pos_b = 0;
-			save->rev_a = 0;
-		}
-		else if (save->result == save->res_4)
-		{
-			save->pos_a = 0;
-			save->rev_b = 0;
-		}
-	}
-}
-
-void			app_stage2(t_app *self)
-{
-	t_greedy	save;
-	t_greedy	temp;
-
-	while (!stack_empty(self->stack_b))
-	{
-		greedy_calc(self, &save, &temp);
-		greedy_fixx(self, &save);
-		stage2_play(self, &save);
 	}
 }

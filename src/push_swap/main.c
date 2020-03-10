@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 01:12:18 by bconchit          #+#    #+#             */
-/*   Updated: 2020/03/10 06:06:10 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/03/10 09:08:54 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int		main(int argc, char *argv[])
 	if (argc > 1)
 	{
 		app_load(&app, argv + 1, argc - 1);
+		// app_stage0(&app);
 		app_stage1(&app);
 		app_stage2(&app);
 		app_stage3(&app);

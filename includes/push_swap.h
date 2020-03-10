@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 06:05:48 by bconchit          #+#    #+#             */
-/*   Updated: 2020/03/10 07:30:20 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/03/10 10:07:13 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
-# include "ft_printf.h"
 # include "stack.h"
 # include "play.h"
+# include "ft_printf.h"
 
 typedef struct	s_greedy
 {
@@ -44,6 +44,8 @@ typedef struct	s_app
 	int			*indexes;
 	int			median;
 	int			count_median;
+	int			count_sequence;
+	int			finally_index;
 }				t_app;
 
 void			app_error(void);
@@ -53,5 +55,9 @@ void			app_output(t_app *self, char *cmd);
 void			app_stage1(t_app *self);
 void			app_stage2(t_app *self);
 void			app_stage3(t_app *self);
+
+void			stage1_play(t_app *self);
+void			stage2_play(t_app *self, t_greedy *save);
+void			stage3_play(t_app *self);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/25 11:53:48 by bconchit          #+#    #+#              #
-#    Updated: 2020/03/10 06:38:06 by bconchit         ###   ########.fr        #
+#    Updated: 2020/03/10 07:26:12 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,13 +86,6 @@ SOURCES_2	= \
 			app_stage1.c \
 			app_stage2.c \
 			app_stage3.c \
-		) \
-		$(addprefix stage1/, \
-			stage1_free.c \
-			stage1_indexes.c \
-			stage1_median.c \
-			stage1_numbers.c \
-			stage1_play.c \
 		) \
 		main.c \
 	) \

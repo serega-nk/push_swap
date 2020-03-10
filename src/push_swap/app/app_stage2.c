@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 09:47:19 by bconchit          #+#    #+#             */
-/*   Updated: 2020/03/10 06:36:38 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/03/10 07:46:54 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,25 +68,28 @@ static void		greedy_calc(t_app *self, t_greedy *save, t_greedy *temp)
 
 static void		greedy_fixx(t_app *self, t_greedy *save)
 {
-	if (save->result == save->res_1)
+	if (self)
 	{
-		save->rev_a = 0;
-		save->rev_b = 0;
-	}
-	else if (save->result == save->res_2)
-	{
-		save->pos_a = 0;
-		save->pos_b = 0;
-	}
-	else if (save->result == save->res_3)
-	{
-		save->pos_b = 0;
-		save->rev_a = 0;
-	}
-	else if (save->result == save->res_4)
-	{
-		save->pos_a = 0;
-		save->rev_b = 0;
+		if (save->result == save->res_1)
+		{
+			save->rev_a = 0;
+			save->rev_b = 0;
+		}
+		else if (save->result == save->res_2)
+		{
+			save->pos_a = 0;
+			save->pos_b = 0;
+		}
+		else if (save->result == save->res_3)
+		{
+			save->pos_b = 0;
+			save->rev_a = 0;
+		}
+		else if (save->result == save->res_4)
+		{
+			save->pos_a = 0;
+			save->rev_b = 0;
+		}
 	}
 }
 

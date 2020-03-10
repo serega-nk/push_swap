@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 10:03:33 by bconchit          #+#    #+#             */
-/*   Updated: 2020/03/10 07:31:24 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/03/10 07:42:59 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void		stage1_play(t_app *self)
 {
 	int		index;
 
-	index = 0;	
+	index = 0;
 	while (index < self->count && self->count_median > 0)
 	{
 		if (self->indexes[index])

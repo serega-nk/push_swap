@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 06:05:48 by bconchit          #+#    #+#             */
-/*   Updated: 2020/03/07 20:57:08 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/03/10 05:50:02 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ typedef struct	s_app
 	int			*numbers;
 	int			*indexes;
 	int			median;
-	t_greedy	greedy;
 }				t_app;
 
 void			app_error(void);
@@ -52,6 +51,7 @@ void			app_load(t_app *self, char *arr[], int count);
 void			app_output(t_app *self, char *cmd);
 void			app_stage1(t_app *self);
 void			app_stage2(t_app *self);
+void			app_stage3(t_app *self);
 
 void			stage1_free(t_app *self);
 void			stage1_indexes(t_app *self);

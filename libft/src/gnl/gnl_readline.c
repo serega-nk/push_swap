@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 01:21:13 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/25 16:17:19 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/03/10 06:46:50 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 static int		gnl_pop(t_gnl *self, char **aline)
 {
-	if (self->save)
+	if (self->save && self->save[0] &&
+		(self->save[1] || self->eof || ft_strchr(self->save[0], '\n')))
 	{
-		if (self->save[0] && (self->save[1] || self->eof))
-		{
-			*aline = self->save[0];
-			self->save[0] = NULL;
-			self->save++;
-			return (1);
-		}
+		*aline = self->save[0];
+		self->save[0] = NULL;
+		self->save++;
+		return (1);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/25 11:53:48 by bconchit          #+#    #+#              #
-#    Updated: 2020/02/29 16:56:54 by bconchit         ###   ########.fr        #
+#    Updated: 2020/03/10 06:38:06 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,6 @@ SOURCES_S	= \
 		stack_load.c \
 		stack_next.c \
 		stack_ordered.c \
-		stack_place.c \
 		stack_pop.c \
 		stack_push.c \
 		stack_reverse_rotate.c \
@@ -86,6 +85,7 @@ SOURCES_2	= \
 			app_output.c \
 			app_stage1.c \
 			app_stage2.c \
+			app_stage3.c \
 		) \
 		$(addprefix stage1/, \
 			stage1_free.c \
@@ -101,7 +101,7 @@ LIBFT_DIR	= ./libft
 LIBFT		= $(LIBFT_DIR)/libft.a
 
 CC			= gcc
-WFLAGS		= #-Wall -Wextra -Werror
+WFLAGS		= -g #-Wall -Wextra -Werror
 IFLAGS		= -I$(INC_DIR)/ -I$(LIBFT_DIR)/includes/
 LFLAGS		= -L$(LIBFT_DIR)/ -lft
 

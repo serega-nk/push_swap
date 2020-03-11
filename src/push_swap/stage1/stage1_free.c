@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   app_free.c                                         :+:      :+:    :+:   */
+/*   stage1_free.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/29 08:41:25 by bconchit          #+#    #+#             */
-/*   Updated: 2020/03/11 10:51:40 by bconchit         ###   ########.fr       */
+/*   Created: 2020/03/11 01:37:53 by bconchit          #+#    #+#             */
+/*   Updated: 2020/03/11 01:48:14 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	app_free(t_app *self)
+void	stage1_free(t_app *self)
 {
-	stage1_free(self);
-	play_destroy(&self->play);
-	stack_destroy(&self->stack_b);
-	stack_destroy(&self->stack_a);
+	ft_memdel((void **)&self->indexes);
+	ft_memdel((void **)&self->numbers);
 }

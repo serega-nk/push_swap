@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/25 11:53:48 by bconchit          #+#    #+#              #
-#    Updated: 2020/03/10 07:46:05 by bconchit         ###   ########.fr        #
+#    Updated: 2020/03/11 11:00:21 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,6 +87,13 @@ SOURCES_2	= \
 			app_stage2.c \
 			app_stage3.c \
 		) \
+		$(addprefix stage1/, \
+			stage1_free.c \
+			stage1_init.c \
+			stage1_median.c \
+			stage1_play.c \
+			stage1_sequence.c \
+		) \
 		main.c \
 	) \
 
@@ -94,7 +101,7 @@ LIBFT_DIR	= ./libft
 LIBFT		= $(LIBFT_DIR)/libft.a
 
 CC			= gcc
-WFLAGS		= -Wall -Wextra -Werror
+WFLAGS		= -g #-Wall -Wextra -Werror
 IFLAGS		= -I$(INC_DIR)/ -I$(LIBFT_DIR)/includes/
 LFLAGS		= -L$(LIBFT_DIR)/ -lft
 
@@ -136,5 +143,20 @@ norm:
 
 test: $(NAME_1)
 	echo "rra\npb\nsa\nrra\npa" | ./checker 3 2 1 0
+
+test1: $(NAME_2)
+	./push_swap 4 3 2 1 0 -1
+
+test2: $(NAME_2)
+	./push_swap 2 3 4 5 6 0 1
+
+test3: $(NAME_2)
+	./push_swap 5 6 0 1 2 3 4
+
+test4: $(NAME_2)
+	./push_swap 2 3 1
+
+test5: $(NAME_2)
+	./push_swap 2 1 5 3 22 17 8 10 30 23 12 99 18 14 4
 
 .PHONY: all clean fclean re norm test

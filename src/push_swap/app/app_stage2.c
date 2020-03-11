@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 09:47:19 by bconchit          #+#    #+#             */
-/*   Updated: 2020/03/10 10:07:27 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/03/11 11:01:32 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,23 @@ static void		greedy_fixx(t_app *self, t_greedy *save)
 	}
 }
 
+static void		greedy_play(t_app *self, t_greedy *save)
+{
+	while (save->pos_a > 0 && save->pos_b > 0 && save->pos_a-- && save->pos_b--)
+		play_rr(self->play);
+	while (save->rev_a > 0 && save->rev_b > 0 && save->rev_a-- && save->rev_b--)
+		play_rrr(self->play);
+	while (save->pos_a > 0 && save->pos_a--)
+		play_ra(self->play);
+	while (save->pos_b > 0 && save->pos_b--)
+		play_rb(self->play);
+	while (save->rev_a > 0 && save->rev_a--)
+		play_rra(self->play);
+	while (save->rev_b > 0 && save->rev_b--)
+		play_rrb(self->play);
+	play_pa(self->play);
+}
+
 void			app_stage2(t_app *self)
 {
 	t_greedy	save;
@@ -102,6 +119,6 @@ void			app_stage2(t_app *self)
 	{
 		greedy_calc(self, &save, &temp);
 		greedy_fixx(self, &save);
-		stage2_play(self, &save);
+		greedy_play(self, &save);
 	}
 }

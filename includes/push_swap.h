@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 06:05:48 by bconchit          #+#    #+#             */
-/*   Updated: 2020/03/10 10:07:13 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/03/11 11:04:45 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,23 @@ typedef struct	s_app
 	t_stack		*stack_b;
 	t_play		*play;
 	int			count;
+	int			index;
+	int			back;
+	int			start;
+	int			final;
 	int			*numbers;
 	int			*indexes;
+	int			sequence;
+	int			offset;
 	int			median;
 	int			count_median;
-	int			count_sequence;
-	int			finally_index;
 }				t_app;
+
+void			stage1_init(t_app *self);
+void			stage1_sequence(t_app *self);
+void			stage1_median(t_app *self);
+void			stage1_play(t_app *self);
+void			stage1_free(t_app *self);
 
 void			app_error(void);
 void			app_free(t_app *self);
@@ -55,9 +65,5 @@ void			app_output(t_app *self, char *cmd);
 void			app_stage1(t_app *self);
 void			app_stage2(t_app *self);
 void			app_stage3(t_app *self);
-
-void			stage1_play(t_app *self);
-void			stage2_play(t_app *self, t_greedy *save);
-void			stage3_play(t_app *self);
 
 #endif

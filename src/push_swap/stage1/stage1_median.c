@@ -1,45 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stage3_calc.c                                      :+:      :+:    :+:   */
+/*   stage1_median.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/10 09:58:48 by bconchit          #+#    #+#             */
-/*   Updated: 2020/03/10 10:10:07 by bconchit         ###   ########.fr       */
+/*   Created: 2020/03/11 10:57:08 by bconchit          #+#    #+#             */
+/*   Updated: 2020/03/11 11:00:39 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	finally_place(t_stack *self)
+void	stage1_median(t_app *self)
 {
+	int		*array;
 	int		index;
-	int		value;
-	int		prev;
 
+	array = (int *)ft_xmemalloc(sizeof(int) * self->count);
 	index = 0;
-	stack_start(self);
-	while (stack_next(self, &value))
+	self->count_median = 0;
+	while (index < self->count)
 	{
-		if (index == 0)
-			prev = value;
-		if (prev > value)
-			return (index);
+		if (self->indexes[index] == 0)
+			array[self->count_median++] = self->numbers[index];
 		index++;
 	}
-	return (0);
-}
-
-void		stage3_calc(t_app *self)
-{
-	int		pos;
-    int		rev;
-
-	pos = finally_place(self->stack_a);
-	rev = stack_count(self->stack_a) - pos;
-    if (pos < rev)
-        self->finally_index = pos;
-    else
-        self->finally_index = -rev;
+	ft_quicksort(array, self->count_median);
+	self->median = array[self->count_median / 2];
+	ft_memdel((void **)&array);
 }

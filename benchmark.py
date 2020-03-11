@@ -32,7 +32,7 @@ def full_check(length):
     return (list(zip(inputs, pswap, checker)))
 
 def run_check(i):
-    if i < 15:
+    if i < 10:
         return full_check(i)
     res = []
     for _ in range(100):
@@ -59,7 +59,12 @@ def save_plot(data, filename):
     plt.clf()
 
 if __name__ == "__main__":
-    for i in [500]:
+    import sys
+    try:
+        value = int(sys.argv[1])
+    except:
+        value = 10    
+    for i in [value]:
         print(f"Running test for {i} numbers...")
         results = sorted(run_check(i), key=lambda x: x[1])
         if all(map(lambda x: x[-1] == "OK", results)):

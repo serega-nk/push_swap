@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 06:05:48 by bconchit          #+#    #+#             */
-/*   Updated: 2020/03/11 11:04:45 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/03/11 13:10:00 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "libft.h"
 # include "stack.h"
 # include "play.h"
-# include "ft_printf.h"
 
 typedef struct	s_greedy
 {

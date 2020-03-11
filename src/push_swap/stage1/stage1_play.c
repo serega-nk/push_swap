@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/10 09:45:49 by bconchit          #+#    #+#             */
-/*   Updated: 2020/03/11 11:04:23 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/03/11 11:14:52 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ void			stage1_play(t_app *self)
 		if (self->indexes[index] == 0)
 		{
 			play_pb(self->play);
+			if (self->numbers[index] >= self->median)
+				play_rb(self->play);
 			count--;
 		}
 		else if (self->indexes[index] == 1)
-		{
 			play_ra(self->play);
-		}
 		else if (self->indexes[index] == 2)
 		{
 			self->indexes[index] = 1;

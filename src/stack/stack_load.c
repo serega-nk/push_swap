@@ -6,7 +6,7 @@
 /*   By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/21 22:07:49 by bconchit          #+#    #+#             */
-/*   Updated: 2020/02/27 21:50:33 by bconchit         ###   ########.fr       */
+/*   Updated: 2020/03/12 23:41:11 by bconchit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	parse_number(char **addr, int *avalue)
 	while (**addr == ' ')
 		(*addr)++;
 	negative = (**addr == '-') ? 1 : 0;
-	if (**addr == '-' || **addr == '+')
+	if ((**addr == '-' || **addr == '+') && *(*addr + 1))
 		(*addr)++;
 	if (ft_isdigit(**addr))
 	{
@@ -41,20 +41,15 @@ static int	parse_number(char **addr, int *avalue)
 
 static int	load(t_stack *self, char *str)
 {
-	int		count;
 	int		value;
 
-	count = 0;
 	while (parse_number(&str, &value))
 	{
 		if (!stack_unique(self, value))
 			return (0);
 		stack_append(self, value);
-		count++;
 	}
-	if (*str || count == 0)
-		return (0);
-	return (1);
+	return (!*str);
 }
 
 int			stack_load(t_stack *self, char *arr[], int count)

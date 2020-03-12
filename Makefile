@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/25 11:53:48 by bconchit          #+#    #+#              #
-#    Updated: 2020/03/11 13:07:51 by bconchit         ###   ########.fr        #
+#    Updated: 2020/03/12 23:50:20 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -143,8 +143,12 @@ re: fclean all
 norm:
 	@norminette $(INCS) $(SRCS_1) $(SRCS_2)
 
-test: $(NAME_1)
-	echo "rra\npb\nsa\nrra\npa" | ./checker 3 2 1 0
+test: $(NAME_1) $(NAME_2)
+	ARG=`ruby -e "puts (1..1).to_a.shuffle.join(' ')"`; ./push_swap $$ARG | ./checker $$ARG; ./push_swap $$ARG | wc -l
+	ARG=`ruby -e "puts (1..3).to_a.shuffle.join(' ')"`; ./push_swap $$ARG | ./checker $$ARG; ./push_swap $$ARG | wc -l
+	ARG=`ruby -e "puts (1..5).to_a.shuffle.join(' ')"`; ./push_swap $$ARG | ./checker $$ARG; ./push_swap $$ARG | wc -l
+	ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`; ./push_swap $$ARG | ./checker $$ARG; ./push_swap $$ARG | wc -l
+	ARG=`ruby -e "puts (1..500).to_a.shuffle.join(' ')"`; ./push_swap $$ARG | ./checker $$ARG; ./push_swap $$ARG | wc -l
 
 test1: $(NAME_2)
 	./push_swap 4 3 2 1 0 -1
@@ -161,4 +165,22 @@ test4: $(NAME_2)
 test5: $(NAME_2)
 	./push_swap 2 1 5 3 22 17 8 10 30 23 12 99 18 14 4
 
-.PHONY: all clean fclean re norm test
+error: $(NAME_1)
+	./push_swap "-" | true
+	./push_swap "-0-" | true
+	./push_swap "-0+" | true
+	./push_swap " - 0" | true
+	./push_swap "9-" | true
+	./push_swap "123a" | true
+	./push_swap "                              908         -00-1" | true
+	./push_swap "-0-0" | true
+
+success: $(NAME_1)
+	./push_swap ""
+	./push_swap "         "
+	./push_swap "                           9"
+	./push_swap "         9                "
+	./push_swap " 2 4 5 6                  7               "
+	./push_swap "                               987  "
+
+.PHONY: all clean fclean re norm test error success

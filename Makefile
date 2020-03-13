@@ -6,7 +6,7 @@
 #    By: bconchit <bconchit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/25 11:53:48 by bconchit          #+#    #+#              #
-#    Updated: 2020/03/13 00:21:15 by bconchit         ###   ########.fr        #
+#    Updated: 2020/03/13 11:57:05 by bconchit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,7 +101,7 @@ LIBFT_DIR	= ./libft
 LIBFT		= $(LIBFT_DIR)/libft.a
 
 CC			= gcc
-WFLAGS		= -g -Wall -Wextra -Werror
+WFLAGS		= -Wall -Wextra -Werror
 IFLAGS		= -I$(INC_DIR)/ -I$(LIBFT_DIR)/includes/
 LFLAGS		= -L$(LIBFT_DIR)/ -lft
 

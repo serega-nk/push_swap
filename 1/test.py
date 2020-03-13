@@ -78,8 +78,8 @@ class Play:
     def run(self, iterable):
         for line in iterable:
             self.execute(line.rstrip())
-            print('cmd =', line)
-            print(self)
+            #print('cmd =', line)
+            #print(self)
 
     def __repr__(self):
         return f'A = {self.stack_a}\nB = {self.stack_b}\ncount = {self.count}'
@@ -87,10 +87,12 @@ class Play:
 
 class Play2(Play):
     def __init__(self, nums):
-        count = 10
+        count = 3
         nums = [(num, i) for i, num in enumerate(nums)]
-        nums = sorted(nums, key=lambda item: item[1])
+        nums = sorted(nums, key=lambda item: item[0])
         nums = [(item[0], item[1], i, i // count) for i, item in enumerate(nums)]
+        nums = sorted(nums, key=lambda item: item[1])
+        print(nums)
         super().__init__(nums)
 
 
@@ -113,7 +115,22 @@ def main():
 
     play = Play2(nums)
     print(play)
-    play.run(cmds)
+    #play.run(cmds)
+    test1(play)
+
+def test1(play):
+    play.play_pb()
+    play.play_rb()
+    play.play_pb()
+    play.play_rb()
+    play.play_pb()
+    print([i[3] for i in play.stack_b._stack])
+
+    #group = 2
+    res = [(i, item[3]) for i, item in enumerate(play.stack_b._stack)]
+    print(res)
+
+
 
 
 

@@ -33,13 +33,11 @@ def main():
                 running = False
             elif event.type == pygame.KEYDOWN and event.key == pygame.K_f: 
                 fullscreen = not fullscreen
-
         if fullscreen:
             color = (random.randrange(255), random.randrange(255), random.randrange(255))
         else:
             color = (0, 0, 0)
-    
-    
+ 
 
         
         screen.fill(color)
